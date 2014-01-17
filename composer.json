@@ -1,5 +1,7 @@
 {
     "require": {
-        "monolog/monolog": "1.2.*"
+        "monolog/monolog": "1.2.*",
+        "slim/slim": "2.*",
+        "doctrine/orm": "2.4.*"
     }
 }

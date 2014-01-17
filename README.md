@@ -1,3 +1,5 @@
+#Composer
+
 installing composer into the home dir of the project:
 `curl -sS https://getcomposer.org/installer | php`
 
@@ -19,4 +21,16 @@ syntax:
   }
 }
 
+#Doctrine
 
+Encapsulate any use of Doctrine in classes that application calls (in order to swap out classes with an identical public API for the ones using Doctrine).
+
+Creating the schema for the DB:
+`php vendor/bin/doctrine orm:schema-tool:create`
+
+If it needs to be updated:
+`php vendor/bin/doctrine orm:schema-tool:drop --force`
+`php vendor/bin/doctrine orm:schema-tool:create`
+
+If functionality just needs to be updated:
+`php vendor/bin/doctrine orm:schema-tool:update --force`
