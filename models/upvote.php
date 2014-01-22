@@ -8,11 +8,11 @@
     /**
      * @ManyToOne(targetEntity="Suggestion", inversedBy="upvotes")
      **/
-    protected $suggestions;
+    protected $suggestion;
     /**
      * @ManyToOne(targetEntity="User", inversedBy="upvotes")
      **/
-    protected $users;
+    protected $user;
 
     public function getId() {
       return $this->id;
@@ -22,19 +22,19 @@
       $this->id = $id;
     }
 
-    public function getSuggestions() {
-      return $this->suggestions;
+    public function getSuggestion() {
+      return $this->suggestion;
     }
 
-    public function setSuggestions($suggestions) {
-      $this->suggestions = $suggestions;
+    public function setSuggestion($suggestion) {
+      $this->suggestion = $suggestion;
     }
 
-    public function getUsers() {
-      return $this->users;
+    public function getUser() {
+      return $this->user;
     }
 
-    public function setUsers($users) {
-      $this->users = $users;
+    public function setUser($user) {
+      $this->user = $user;
     }
   }

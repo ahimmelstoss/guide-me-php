@@ -34,3 +34,6 @@ If it needs to be updated:
 
 If functionality just needs to be updated:
 `php vendor/bin/doctrine orm:schema-tool:update --force`
+
+Once the schema is created, one way to add items into the DB is through the CLI:
+`php create_topic.php ORM`

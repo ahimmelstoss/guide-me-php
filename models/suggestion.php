@@ -23,11 +23,11 @@
     /**
      * @ManyToOne(targetEntity="Topic", inversedBy="suggestions")
      **/
-    protected $topics;
+    protected $topic;
     /**
      * @ManyToOne(targetEntity="User", inversedBy="suggestions")
      **/
-    protected $users;
+    protected $user;
     /**
      * @OneToMany(targetEntity="Upvote", mappedBy="suggestions")
      * @var Upvote[]
@@ -66,20 +66,20 @@
       $this->description = $description;
     }
 
-    public function getTopics() {
-      return $this->topics;
+    public function getTopic() {
+      return $this->topic;
     }
 
-    public function setTopics($topics) {
-      $this->topics = $topics;
+    public function setTopic($topic) {
+      $this->topic = $topic;
     }
 
-    public function getUsers() {
-      return $this->users;
+    public function getUser() {
+      return $this->user;
     }
 
-    public function setUsers($users) {
-      $this->users = $users;
+    public function setUser($user) {
+      $this->user = $user;
     }
 
     public function getUpvotes() {

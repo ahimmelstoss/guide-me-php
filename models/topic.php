@@ -18,7 +18,7 @@ class Topic {
   /**
    * @ManyToOne(targetEntity="User", inversedBy="topics")
    **/
-  protected $users;
+  protected $user;
   /**
    * @OneToMany(targetEntity="Suggestion", mappedBy="topics")
    * @var Suggestion[]
@@ -29,7 +29,6 @@ class Topic {
    * @JoinTable(name="topics_tags")
    **/
   protected $tags;
-
 
   public function getId() {
     return $this->id;
@@ -52,11 +51,11 @@ class Topic {
   }
 
   public function getUser() {
-    return $this->users;
+    return $this->user;
   }
 
-  public function setUser($users) {
-    $this->users = $users;
+  public function setUser($user) {
+    $this->user = $user;
   }
 
   public function getSuggestions() {
