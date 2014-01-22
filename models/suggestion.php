@@ -1,15 +1,45 @@
 <?php 
-
+/**
+ * @Entity @Table(name="suggestions")
+ **/
   class Suggestion {
+    /** @Id @Column(type="integer") @GeneratedValue **/
     protected $id;
+    /**
+     * @Column(type="string")
+     * @var string
+     */
     protected $title;
+    /**
+     * @Column(type="string")
+     * @var string
+     */
     protected $url;
+    /**
+     * @Column(type="string")
+     * @var string
+     */
     protected $description;
-    protected $topic_id;
-    protected $user_id;
+    /**
+     * @ManyToOne(targetEntity="Topic", inversedBy="suggestions")
+     **/
+    protected $topics;
+    /**
+     * @ManyToOne(targetEntity="User", inversedBy="suggestions")
+     **/
+    protected $users;
+    /**
+     * @OneToMany(targetEntity="Upvote", mappedBy="suggestions")
+     * @var Upvote[]
+     **/
+    protected $upvotes;
 
     public function getId() {
       return $this->id;
+    }
+
+    public function setId($id) {
+      $this->id = $id;
     }
 
     public function getTitle() {
@@ -36,11 +66,31 @@
       $this->description = $description;
     }
 
-    public function getTopicId() {
-      return $this->topic_id;
+    public function getTopics() {
+      return $this->topics;
     }
 
-    public function getUserId() {
-      return $this->user_id;
+    public function setTopics($topics) {
+      $this->topics = $topics;
+    }
+
+    public function getUsers() {
+      return $this->users;
+    }
+
+    public function setUsers($users) {
+      $this->users = $users;
+    }
+
+    public function getUpvotes() {
+      return $this->upvotes;
+    }
+
+    public function setUpvotes($upvotes) {
+      $this->upvotes = $upvotes;
+    }
+
+    public function __construct() {
+      $this->upvotes = new \Doctrine\Common\Collections\ArrayCollection();
     }
   }

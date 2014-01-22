@@ -1,12 +1,47 @@
 <?php 
+/**
+ * @Entity @Table(name="users")
+ **/
   class User {
+    /** @Id @Column(type="integer") @GeneratedValue **/
     protected $id;
+    /**
+     * @Column(type="string")
+     * @var string
+     */
     protected $name;
+    /**
+     * @Column(type="string")
+     * @var string
+     */
     protected $email;
+    /**
+     * @Column(type="string")
+     * @var string
+     */
     protected $password;
+    /**
+     * @OneToMany(targetEntity="Topic", mappedBy="users")
+     * @var Topic[]
+     **/
+    protected $topics;
+    /**
+     * @OneToMany(targetEntity="Suggestion", mappedBy="users")
+     * @var Suggestion[]
+     **/
+    protected $suggestions;
+    /**
+     * @OneToMany(targetEntity="Upvote", mappedBy="users")
+     * @var Upvote[]
+     **/
+    protected $upvotes;
 
     public function getId() {
       return $this->id;
+    }
+
+    public function setId($id) {
+      $this->id = $id;
     }
 
     public function getName() {
@@ -29,7 +64,29 @@
       return $this->password;
     }
 
-    public function setPassword() {
+    public function setPassword($password) {
       $this->password = $password;
+    }
+
+    public function getTopics() {
+      return $this->topics;
+    }
+
+    public function setTopics($topics) {
+      $this->topics = $topics;
+    }
+
+    public function getUpvotes() {
+      return $this->upvotes;
+    }
+
+    public function setUpvotes($upvotes) {
+      $this->upvotes = $upvotes;
+    }
+
+    public function __construct() {
+      $this->topics = new \Doctrine\Common\Collections\ArrayCollection();
+      $this->suggestions = new \Doctrine\Common\Collections\ArrayCollection();
+      $this->upvotes = new \Doctrine\Common\Collections\ArrayCollection();
     }
   }

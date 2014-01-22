@@ -1,18 +1,40 @@
 <?php
+/**
+ * @Entity @Table(name="upvotes")
+ **/
   class Upvote {
+    /** @Id @Column(type="integer") @GeneratedValue **/
     protected $id;
-    protected $suggestion_id;
-    protected $user_id;
+    /**
+     * @ManyToOne(targetEntity="Suggestion", inversedBy="upvotes")
+     **/
+    protected $suggestions;
+    /**
+     * @ManyToOne(targetEntity="User", inversedBy="upvotes")
+     **/
+    protected $users;
 
     public function getId() {
       return $this->id;
     }
 
-    public function getSuggestionId() {
-      return $this->suggestion_id;
+    public function setId($id) {
+      $this->id = $id;
     }
 
-    public function getUserId() {
-      return $this->user_id;
+    public function getSuggestions() {
+      return $this->suggestions;
+    }
+
+    public function setSuggestions($suggestions) {
+      $this->suggestions = $suggestions;
+    }
+
+    public function getUsers() {
+      return $this->users;
+    }
+
+    public function setUsers($users) {
+      $this->users = $users;
     }
   }

@@ -1,10 +1,26 @@
 <?php
+/**
+ * @Entity @Table(name="tags")
+ **/
   class Tag {
+    /** @Id @Column(type="integer") @GeneratedValue **/
     protected $id;
+    /**
+     * @Column(type="string")
+     * @var string
+     */
     protected $name;
+    /**
+     * @ManyToMany(targetEntity="Topic", mappedBy="tags")
+     **/
+    protected $topics;
 
     public function getId() {
       return $this->id;
+    }
+
+    public function setId($id) {
+      $this->id = $id;
     }
 
     public function getName() {
@@ -13,5 +29,17 @@
 
     public function setName($name) {
       $this->name = $name;
+    }
+
+    public function getTopics() {
+      return $this->topics;
+    }
+
+    public function setTopics($topics) {
+      $this->topics = $topics;
+    }
+
+    public function __construct() {
+      $this->topics = new \Doctrine\Common\Collections\ArrayCollection();
     }
   }

@@ -1,21 +1,46 @@
 <?php
-
+/**
+ * @Entity @Table(name="topics")
+ **/
 class Topic {
+  /** @Id @Column(type="integer") @GeneratedValue **/
   protected $id;
+  /**
+     * @Column(type="string")
+     * @var string
+     */
   protected $title;
+  /**
+     * @Column(type="string")
+     * @var string
+     */
   protected $description;
-  protected $user_id;
+  /**
+   * @ManyToOne(targetEntity="User", inversedBy="topics")
+   **/
+  protected $users;
+  /**
+   * @OneToMany(targetEntity="Suggestion", mappedBy="topics")
+   * @var Suggestion[]
+   **/
+  protected $suggestions;
+  /**
+   * @ManyToMany(targetEntity="Tag", inversedBy="topics")
+   * @JoinTable(name="topics_tags")
+   **/
+  protected $tags;
+
 
   public function getId() {
     return $this->id;
   }
 
   public function getTitle() {
-    return $this->name;
+    return $this->title;
   }
 
   public function setTitle($title) {
-    $this->name = $name;
+    $this->title = $title;
   }
 
   public function getDescription() {
@@ -26,8 +51,32 @@ class Topic {
     $this->description = $description;
   }
 
-  public function getUserId() {
-    return $this->user_id;
+  public function getUser() {
+    return $this->users;
   }
 
+  public function setUser($users) {
+    $this->users = $users;
+  }
+
+  public function getSuggestions() {
+    return $this->suggestions;
+  }
+
+  public function setSuggestions($suggestions) {
+    $this->suggestions = $suggestions;
+  }
+
+  public function getTags() {
+    return $this->tags;
+  }
+
+  public function setTags($tags) {
+    $this->tags = $tags;
+  }
+
+  public function __construct() {
+    $this->tags = new \Doctrine\Common\Collections\ArrayCollection();
+    $this->suggestions = new \Doctrine\Common\Collections\ArrayCollection();
+  }
 }
