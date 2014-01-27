@@ -1,4 +1,6 @@
 <?php 
+
+use Doctrine\Common\Collections\ArrayCollection;
 /**
  * @Entity @Table(name="users")
  **/
@@ -35,6 +37,12 @@
      * @var Upvote[]
      **/
     protected $upvotes;
+
+    public function __construct() {
+      $this->topics = new ArrayCollection();
+      $this->suggestions = new ArrayCollection();
+      $this->upvotes = new ArrayCollection();
+    }
 
     public function getId() {
       return $this->id;
@@ -82,11 +90,5 @@
 
     public function setUpvotes($upvotes) {
       $this->upvotes = $upvotes;
-    }
-
-    public function __construct() {
-      $this->topics = new \Doctrine\Common\Collections\ArrayCollection();
-      $this->suggestions = new \Doctrine\Common\Collections\ArrayCollection();
-      $this->upvotes = new \Doctrine\Common\Collections\ArrayCollection();
     }
   }

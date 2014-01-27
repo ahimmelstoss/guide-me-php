@@ -1,4 +1,6 @@
 <?php
+
+use Doctrine\Common\Collections\ArrayCollection;
 /**
  * @Entity @Table(name="tags")
  **/
@@ -14,6 +16,10 @@
      * @ManyToMany(targetEntity="Topic", mappedBy="tags")
      **/
     protected $topics;
+
+    public function __construct() {
+      $this->topics = new ArrayCollection();
+    }
 
     public function getId() {
       return $this->id;
@@ -37,9 +43,5 @@
 
     public function setTopics($topics) {
       $this->topics = $topics;
-    }
-
-    public function __construct() {
-      $this->topics = new \Doctrine\Common\Collections\ArrayCollection();
     }
   }

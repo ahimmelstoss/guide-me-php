@@ -1,4 +1,6 @@
 <?php
+
+use Doctrine\Common\Collections\ArrayCollection;
 /**
  * @Entity @Table(name="topics")
  **/
@@ -29,6 +31,11 @@ class Topic {
    * @JoinTable(name="topics_tags")
    **/
   protected $tags;
+
+  public function __construct() {
+    $this->tags = new ArrayCollection();
+    $this->suggestions = new ArrayCollection();
+  }
 
   public function getId() {
     return $this->id;
@@ -72,10 +79,5 @@ class Topic {
 
   public function setTags($tags) {
     $this->tags = $tags;
-  }
-
-  public function __construct() {
-    $this->tags = new \Doctrine\Common\Collections\ArrayCollection();
-    $this->suggestions = new \Doctrine\Common\Collections\ArrayCollection();
   }
 }
