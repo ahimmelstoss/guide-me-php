@@ -8,21 +8,21 @@ class Topic {
   /** @Id @Column(type="integer") @GeneratedValue **/
   protected $id;
   /**
-     * @Column(type="string")
-     * @var string
-     */
+   * @Column(type="string")
+   * @var string
+   */
   protected $title;
   /**
-     * @Column(type="string")
-     * @var string
-     */
+   * @Column(type="string")
+   * @var string
+   */
   protected $description;
   /**
    * @ManyToOne(targetEntity="User", inversedBy="topics")
    **/
   protected $user;
   /**
-   * @OneToMany(targetEntity="Suggestion", mappedBy="topics")
+   * @OneToMany(targetEntity="Suggestion", mappedBy="topic")
    * @var Suggestion[]
    **/
   protected $suggestions;

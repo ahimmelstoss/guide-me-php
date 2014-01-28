@@ -31,7 +31,7 @@ use Doctrine\Common\Collections\ArrayCollection;
      **/
     protected $user;
     /**
-     * @OneToMany(targetEntity="Upvote", mappedBy="suggestions")
+     * @OneToMany(targetEntity="Upvote", mappedBy="suggestion")
      * @var Upvote[]
      **/
     protected $upvotes;

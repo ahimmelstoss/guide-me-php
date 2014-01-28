@@ -23,17 +23,17 @@ use Doctrine\Common\Collections\ArrayCollection;
      */
     protected $password;
     /**
-     * @OneToMany(targetEntity="Topic", mappedBy="users")
+     * @OneToMany(targetEntity="Topic", mappedBy="user")
      * @var Topic[]
      **/
     protected $topics;
     /**
-     * @OneToMany(targetEntity="Suggestion", mappedBy="users")
+     * @OneToMany(targetEntity="Suggestion", mappedBy="user")
      * @var Suggestion[]
      **/
     protected $suggestions;
     /**
-     * @OneToMany(targetEntity="Upvote", mappedBy="users")
+     * @OneToMany(targetEntity="Upvote", mappedBy="user")
      * @var Upvote[]
      **/
     protected $upvotes;

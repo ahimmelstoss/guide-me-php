@@ -3,11 +3,14 @@
 
   $newTopicTitle = $argv[1];
   $newTopicDescription = $argv[2];
-  $newTopicUser = $argv[3];
+  $userId = $argv[3];
+
+  $user = $entityManager->find("User", $userId);
 
   $topic = new Topic();
   $topic->setTitle($newTopicTitle);
-  $topic->setUser($newTopicUser);
+  $topic->setDescription($newTopicDescription);
+  $topic->setUser($user);
 
   $entityManager->persist($topic);
   $entityManager->flush();
