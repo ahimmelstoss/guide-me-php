@@ -37,3 +37,8 @@ If functionality just needs to be updated:
 
 Once the schema is created, one way to add items into the DB is through the CLI:
 `php create_topic.php TOPICNAME`
+
+#Slim
+
+run local server:
+`php -S localhost:3000`
