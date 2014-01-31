@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "dde1bf547acf87a29363e8aff5878355",
+    "hash": "b8f833da669770dc79e02a49deaae7f9",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -607,6 +607,22 @@
                 "logging"
             ],
             "time": "2012-08-29 11:53:20"
+        },
+        {
+            "name": "savant/Savant3",
+            "version": "3.0.1",
+            "dist": {
+                "type": "tar",
+                "url": "http://phpsavant.com/get/Savant3-3.0.1.tgz",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "./"
+                ]
+            }
         },
         {
             "name": "slim/slim",
