@@ -1,7 +1,9 @@
 #GuideMe...
-...is an app that I collaborated on at the Flatiron School, linked <a href="http://guideme.herokuapp.com/">here</a> (repo <a href="https://github.com/BuilderBears/snowball">here</a>). Here, I am rewriting it in PHP, using Slim, Doctrine ORM, and Savant templating.
+...is an app that I collaborated on at the Flatiron School, linked <a href="http://guideme.herokuapp.com/">here</a> (repo <a href="https://github.com/BuilderBears/snowball">here</a>). 
 
-#Composer
+I am rewriting it in PHP, using Slim, Doctrine ORM, and Savant templating.
+
+###Composer
 
 installing composer into the home dir of the project:
 `curl -sS https://getcomposer.org/installer | php`
@@ -24,7 +26,7 @@ syntax:
   }
 }
 
-#Doctrine
+###Doctrine
 
 Encapsulate any use of Doctrine in classes that application calls (in order to swap out classes with an identical public API for the ones using Doctrine).
 
@@ -41,7 +43,7 @@ If functionality just needs to be updated:
 Once the schema is created, one way to add items into the DB is through the CLI:
 `php create_topic.php TOPICNAME`
 
-#Slim
+###Slim
 
 run local server:
 `php -S localhost:3000`
