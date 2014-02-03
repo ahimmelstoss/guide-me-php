@@ -53,7 +53,7 @@ run local server:
 ###Get Savant into project via composer:
 1. downloaded manually and added to vendor directory
 2. required it in composer.json file as a repository (as a pear download normally, this is the way to do it with composer):
-```php
+```
 "repositories": [
   {
       "type": "package",
@@ -75,7 +75,7 @@ run local server:
   ###Savant
 
   Pass any objects to a Savant class variable, which can then be rendered in the tpl.php file
-  ```php
+  ```
   $tpl = new Savant3();
   $tpl->topics = $topics;
   $tpl->display('views/topics/index.tpl.php');
