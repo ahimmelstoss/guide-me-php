@@ -5,6 +5,9 @@ require_once "bootstrap.php";
 
 $app = new \Slim\Slim();
 
+session_cache_limiter(false);
+session_start();
+
 require './routes/topics.php';
 require './routes/users.php';
 require './routes/suggestions.php';
