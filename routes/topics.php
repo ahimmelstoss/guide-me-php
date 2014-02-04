@@ -5,7 +5,6 @@ $app->get('/topics', function() use($entityManager) {
   $dql = "SELECT t, u FROM Topic t JOIN t.user u ORDER BY t.id DESC";
 
   $query = $entityManager->createQuery($dql);
-  $query->setMaxResults(30);
   $topics = $query->getResult();
 
   $tpl = new Savant3();
