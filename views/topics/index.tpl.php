@@ -8,12 +8,12 @@
   <section id="topics">
     <?php foreach ($this->topics as $topic): ?>
     <article>
-      <h3 class="topic-link"> <?php echo $topic->getTitle() ?> <span class="name-link"> <?php echo $topic->getUser()->getName() ?> </span> </h3>
+      <h3 class="topic-link"> <a href="/topics/<?php echo $topic->getId()?>"><?php echo $topic->getTitle() ?></a> <span class="name-link"> <a href="/users/<?php echo $topic->getUser()->getName()?>"><?php echo $topic->getUser()->getName() ?></a> </span> </h3>
       <p> <strong>Description:</strong> <?php echo $topic->getDescription() ?> </p>
         <?php if (null !==($topic->getTags())): ?>
           <p> <strong>Tags:</strong>
             <?php foreach ($topic->getTags() as $tag): ?>
-            <?php echo $tag->getName() ?>
+            <a href="/tags/<?php echo $tag->getName()?>"><?php echo $tag->getName() ?></a>
           <?php endforeach; ?>
           </p>
        <?php endif; ?>
@@ -22,7 +22,7 @@
           <?php echo "suggestion" ?>
           <?php else: ?>
           <?php echo "suggestions" ?>
-          <?php endif; ?>
+        <?php endif; ?>
         </p>
     </article>
     <?php endforeach; ?>

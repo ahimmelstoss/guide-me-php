@@ -9,15 +9,15 @@
   <?php if (null !==($this->topic->getTags())): ?>
     <p><strong>Tags:</strong>
       <?php foreach ($this->topic->getTags() as $tag): ?>
-        <?php echo $tag->getName() ?>
+        <a href="/tags/<?php echo $tag->getName() ?>"><?php echo $tag->getName() ?></a>
       <?php endforeach; ?></p>
   <?php endif; ?>
 
   <?php foreach ($this->topic->getSuggestions() as $suggestion): ?>
   <div class="well clearfix">
     <div id="suggestion-content">
-      <p><?php echo $suggestion->getTitle() ?><span class="suggestion-name-link"><?php echo $suggestion->getUser()->getName() ?></span></p>
-      <p><?php $suggestion->getDescription() ?></p>
+      <p><a target="_blank" href="<?php echo $suggestion->getUrl()?>"><?php echo $suggestion->getTitle() ?></a><span class="suggestion-name-link"> added by: <a href="/users/<?php echo $suggestion->getUser()->getName() ?>"><?php echo $suggestion->getUser()->getName() ?></a></span></p>
+      <p><?php echo $suggestion->getDescription() ?></p>
     </div>
   </div>
   <?php endforeach; ?>
