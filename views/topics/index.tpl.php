@@ -1,14 +1,11 @@
-<html>
-<head>
-  <title>Topics</title>
-</head>
-<body>
+  <?php include_once 'views/partials/header.tpl.php'; ?>
+
   <h1 style="color: #7f8c8d;">All Topics</h1>
 
   <section id="topics">
     <?php foreach ($this->topics as $topic): ?>
     <article>
-      <h3 class="topic-link"> <a href="/topics/<?php echo $topic->getId()?>"><?php echo $topic->getTitle() ?></a> <span class="name-link"> <a href="/users/<?php echo $topic->getUser()->getName()?>"><?php echo $topic->getUser()->getName() ?></a> </span> </h3>
+      <h3 class="topic-link"> <a href="/topics/<?php echo $topic->getId()?>"><?php echo $topic->getTitle() ?></a> <span class="name-link"> <a href="/users/<?php echo $topic->getUser()->getName()?>"> posted by: <?php echo $topic->getUser()->getName() ?></a> </span> </h3>
       <p> <strong>Description:</strong> <?php echo $topic->getDescription() ?> </p>
         <?php if (null !==($topic->getTags())): ?>
           <p> <strong>Tags:</strong>
@@ -28,6 +25,4 @@
     <?php endforeach; ?>
   </section>
 
-</body>
-</html>
-
+  <?php include_once 'views/partials/footer.tpl.php'; ?>

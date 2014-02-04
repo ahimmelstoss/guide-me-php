@@ -1,8 +1,5 @@
-<html>
-<head>
-  <title></title>
-</head>
-<body>
+<?php include_once 'views/partials/header.tpl.php'; ?>
+
   <h1><?php echo $this->user->getName() ?></h1>
   <h3><?php echo $this->user->getName() ?>'s Topics</h3>
   <?php foreach ($this->user->getTopics() as $topic): ?>
@@ -32,5 +29,5 @@
       <p>Suggestion Upvotes: <?php echo count($suggestion->getUpvotes()) ?></p>
     </div>
   <?php endforeach; ?>
-</body>
-</html>
+
+<?php include_once 'views/partials/footer.tpl.php'; ?>

@@ -1,8 +1,4 @@
-<html>
-<head>
-  <title>Topics</title>
-</head>
-<body>
+<?php include_once 'views/partials/header.tpl.php'; ?>
 
   <h1> <?php echo $this->topic->getTitle() ?> </h1>
   <h3> <?php echo $this->topic->getDescription() ?> </h3>
@@ -34,7 +30,6 @@
   </div>
   <?php endforeach; ?>
 
-</body>
-</html>
-
 <!-- TODO: suggestion form if user is signed in -->
+
+<?php include_once 'views/partials/footer.tpl.php'; ?>
