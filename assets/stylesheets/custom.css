@@ -1,16 +1,31 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+body{
+  background-color: #ecf0f1 !important;
+}
 
-$body-bg: #ecf0f1;
-$font-family-sans-serif: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$navbar-height: 45px;
-$navbar-default-bg: #34495e;
-$navbar-default-brand-color: white;
-$brand-primary: #3498db;
-$navbar-default-link-color: white;
-$navbar-default-link-hover-color: #34495e;
-$jumbotron-bg: white;
+.navbar {
+  height: 45px !important;
+}
 
-@import 'bootstrap';
+.navbar-header {
+  width: 45% !important;
+}
+
+.navbar-default {
+  background-color: #34495e !important;
+}
+
+.navbar-default a {
+  color: white !important;
+}
+
+.navbar-default a:hover {
+  background-color: #ecf0f1 !important;
+  color: #34495e !important;
+}
+
+.jumbotron {
+  background-color: white !important;
+}
 
 body, html {
   height: 100%;
@@ -180,4 +195,3 @@ a:hover {
 .twitter-links {
   font-weight: 300;
 }
-
