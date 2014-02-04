@@ -91,4 +91,12 @@ use Doctrine\Common\Collections\ArrayCollection;
     public function setUpvotes($upvotes) {
       $this->upvotes = $upvotes;
     }
+
+    public function getSuggestions() {
+      return $this->suggestions;
+    }
+
+    public function setSuggestions($suggestions) {
+      $this->suggestions = $suggestions;
+    }
   }

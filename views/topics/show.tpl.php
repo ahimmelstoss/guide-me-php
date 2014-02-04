@@ -19,10 +19,22 @@
       <p><a target="_blank" href="<?php echo $suggestion->getUrl()?>"><?php echo $suggestion->getTitle() ?></a><span class="suggestion-name-link"> added by: <a href="/users/<?php echo $suggestion->getUser()->getName() ?>"><?php echo $suggestion->getUser()->getName() ?></a></span></p>
       <p><?php echo $suggestion->getDescription() ?></p>
     </div>
+
+    <div id="upvote-button">
+      <span id="upvotecountspan<?php echo $suggestion->getid() ?>"><?php echo count($suggestion->getUpvotes()) ?></span> 
+        <?php if (count($suggestion->getUpvotes()) == 1): ?>
+          <?php echo "upvote" ?>
+          <?php else: ?>
+          <?php echo "upvotes" ?>
+        <?php endif; ?> | 
+      <button type="button" class="upvote" data-suggestion-id="<?php echo $suggestion->getid() ?>">
+        <span class="glyphicon glyphicon-arrow-up"></span>
+      </button>
+    </div>
   </div>
   <?php endforeach; ?>
 
 </body>
 </html>
 
-<!-- TODO: upvote button and suggestion form if user is signed in -->
+<!-- TODO: suggestion form if user is signed in -->
