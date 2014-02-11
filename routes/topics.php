@@ -23,6 +23,11 @@ $app->get('/topics/:id', function($id) use($entityManager, $app) {
 
 });
 
+$app->get('/topics/new', function() use($entityManager, $app) {
+  $tpl = $app->view;
+  $tpl->display('views/topics/new.tpl.php');
+});
+
 $app->post('/topics/new', function() use($entityManager, $app) {
 
   $topic = new Topic();
@@ -32,12 +37,13 @@ $app->post('/topics/new', function() use($entityManager, $app) {
 
   $entityManager->persist($topic);
   $entityManager->flush();
+  $app->redirect('/topics');
+});
 
+$app->get('/topics/:id/edit', function() use($entityManager, $app) {
   $tpl = $app->view;
   $tpl->topic = $topic;
-  $tpl->display('views/topics/new.tpl.php');
-  
-  $app->redirect('/topics');
+  $tpl->display('views/topics/edit.tpl.php');
 });
 
 $app->post('/topics/:id/edit', function($id) use($entityManager, $app) {
@@ -50,11 +56,6 @@ $app->post('/topics/:id/edit', function($id) use($entityManager, $app) {
 
   $entityManager->persist($topic);
   $entityManager->flush();
-
-  $tpl = $app->view;
-  $tpl->topic = $topic;
-  $tpl->display('views/topics/edit.tpl.php');
-
   $app->redirect('/topics/:id');
 
 });
