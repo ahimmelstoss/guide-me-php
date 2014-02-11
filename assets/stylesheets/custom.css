@@ -25,6 +25,7 @@ body{
 
 .jumbotron {
   background-color: white !important;
+  margin-top: 60px !important;
 }
 
 body, html {
@@ -46,10 +47,6 @@ body, html {
 
 .navbar-right li:hover {
   background-color: #ecf0f1;
-}
-
-.jumbotron {
-  margin-top: 60px;
 }
 
 .top-spacer {

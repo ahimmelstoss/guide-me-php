@@ -6,7 +6,7 @@
       "savant/Savant3": "3.0.1"
   },
   "autoload": {
-      "classmap": ["models/"]
+      "classmap": ["models/", "lib/"]
   },
   "repositories": [
   {

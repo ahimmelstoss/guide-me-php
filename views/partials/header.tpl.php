@@ -35,8 +35,8 @@
       <ul class="nav navbar-nav navbar-right">
           <li><a href="/topics">Topics</a></li>
           <li><a href="/topics/new">New Topic</a></li>
-          <?php if (true): //fix?>
-            <li><a href="/users/current_user">Your Name</a></li>
+          <?php if (isset($this->user)): //fix?>
+            <li><a href="/users/<?php echo $this->user->getId() ?>"> <?php echo $this->user->getName() ?></a></li>
             <li><a href="/logout">Log Out</a></li>
           <?php else: ?>
             <li><a href="/signup">Sign Up</a></li>
