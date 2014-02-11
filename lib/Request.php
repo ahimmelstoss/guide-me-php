@@ -11,7 +11,7 @@ class Request extends \Slim\Http\Request {
   }
   public function session($key = null, $default = null) {
     if ($key) {
-      return isset($this->session[$key]) ?: null;
+      return isset($this->session[$key]) ? $this->session[$key] : null;
     }
     return $this->session;
   }
