@@ -14,9 +14,7 @@ $app->get('/signup', function() use($app) {
 });
 
 $app->post('/signup', function() use($entityManager, $app) {
-
   $signupData = $app->request->post();
-
   if (!isset($signupData["name"]) && !isset($signupData["email"]) && !isset($signupData["password"]) && !isset($signupData["password_confirmation"])):
   elseif (isset($signupData["name"]) && isset($signupData["email"]) && isset($signupData["password"]) && isset($signupData["password_confirmation"]) && $signupData["password"] == $signupData["password_confirmation"]):
     $user = new User();

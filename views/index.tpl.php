@@ -1,0 +1,15 @@
+<?php include_once 'views/partials/header.tpl.php'; ?>
+
+<div class="jumbotron center">
+  <h1 id="home-page-logo">GuideMe</h1>
+  <form class="navbar-form" role="search" action="search_results" method="get" id="home-search-form">
+    <div class="input-group" id="home-page-input-group">
+      <input type="text" class="form-control" placeholder="Search for the best resources by topic (e.g. beginner ruby, twitter api, etc.)" name="srch-term" id="srch-term">
+      <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<?php include_once 'views/partials/footer.tpl.php'; ?>

@@ -6,7 +6,6 @@ $app->get('/login', function () use($app) {
 });
 
 $app->post('/login', function () use($entityManager, $app) {
-
   $loginData = $app->request->post();
   if (!isset($loginData["email"]) && !isset($loginData["password"])):
   elseif (isset($loginData["email"]) && isset($loginData["password"])):
@@ -18,7 +17,6 @@ $app->post('/login', function () use($entityManager, $app) {
       $app->redirect('/topics');
     endif;
   endif;
-
 });
 
 $app->get('/logout', function() use($app) {
