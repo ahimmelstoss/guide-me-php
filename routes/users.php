@@ -8,7 +8,7 @@ $app->get('/users/:id', function($id) use ($entityManager, $app) {
   $tpl->display('views/users/show.tpl.php');
 });
 
-$app->get('/signup', function() use($entityManager, $app) {
+$app->get('/signup', function() use($app) {
   $tpl = $app->view;
   $tpl->display('views/users/new.tpl.php');
 });
