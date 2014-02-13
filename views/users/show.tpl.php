@@ -29,5 +29,3 @@
       <p>Suggestion Upvotes: <?php echo count($suggestion->getUpvotes()) ?></p>
     </div>
   <?php endforeach; ?>
-
-<?php include_once 'views/partials/footer.tpl.php'; ?>

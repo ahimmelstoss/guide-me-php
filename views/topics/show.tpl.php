@@ -1,6 +1,6 @@
 <?php include_once 'views/partials/header.tpl.php'; ?>
 
-  <h1> <?php echo $this->topic->getTitle() ?> </h1>
+  <h1> <?php echo $this->topic->getTitle() ?> <span class="name-link"> <a href="/users/<?php echo $this->topic->getUser()->getId()?>"> posted by: <?php echo $this->topic->getUser()->getName() ?></a></span> </h1>
   <h3> <?php echo $this->topic->getDescription() ?> </h3>
   <?php if (null !==($this->topic->getTags())): ?>
     <p><strong>Tags:</strong>
@@ -31,5 +31,3 @@
   <?php endforeach; ?>
 
 <!-- TODO: suggestion form if user is signed in -->
-
-<?php include_once 'views/partials/footer.tpl.php'; ?>
