@@ -13,3 +13,5 @@
   </div>
   <input class="btn btn-default" type="submit" value="Log In">
 </form>
+
+<?php include_once 'views/partials/footer.tpl.php'; ?>

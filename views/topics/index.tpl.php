@@ -24,3 +24,5 @@
     </article>
     <?php endforeach; ?>
   </section>
+  
+<?php include_once 'views/partials/footer.tpl.php'; ?>

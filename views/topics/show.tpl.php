@@ -30,4 +30,6 @@
   </div>
   <?php endforeach; ?>
 
+<?php include_once 'views/partials/footer.tpl.php'; ?>
+
 <!-- TODO: suggestion form if user is signed in -->

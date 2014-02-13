@@ -9,3 +9,5 @@
     <input type="submit" class="btn btn-default">
   </form>
 </div>
+
+<?php include_once 'views/partials/footer.tpl.php'; ?>
