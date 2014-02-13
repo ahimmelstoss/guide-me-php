@@ -11,11 +11,6 @@ use Doctrine\Common\Collections\ArrayCollection;
      * @Column(type="string")
      * @var string
      */
-    protected $title;
-    /**
-     * @Column(type="string")
-     * @var string
-     */
     protected $url;
     /**
      * @Column(type="string")
@@ -46,14 +41,6 @@ use Doctrine\Common\Collections\ArrayCollection;
 
     public function setId($id) {
       $this->id = $id;
-    }
-
-    public function getTitle() {
-      return $this->title;
-    }
-
-    public function setTitle($title) {
-      $this->title = $title;
     }
 
     public function getUrl() {

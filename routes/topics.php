@@ -18,8 +18,6 @@ $app->get('/topics/new', function() use($app) {
 
 $app->post('/topics/new', function() use($entityManager, $app) {
   $newTopicData = $app->request->post();
-  // var_dump($newTopicData);
-  // exit;
   $user = $entityManager->find("User", $app->request->session('user_id'));
   if (!isset($newTopicData["title"]) && !isset($newTopicData["description"])):
   elseif (isset($newTopicData["title"]) && isset($newTopicData["description"])):

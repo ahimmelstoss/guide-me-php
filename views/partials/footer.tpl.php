@@ -24,7 +24,7 @@
       <ul class="nav navbar-nav navbar-right">
           <li><a href="/topics">Topics</a></li>
           <li><a href="/topics/new">New Topic</a></li>
-          <?php if (isset($this->user)): //fix?>
+          <?php if (isset($this->user)): ?>
             <li><a href="/users/<?php echo $this->user->getId() ?>"> <?php echo $this->user->getName() ?></a></li>
             <li><a href="/logout">Log Out</a></li>
           <?php else: ?>
@@ -49,7 +49,6 @@
     
     <ul class="nav navbar-nav navbar-right footer-links">
       <li><a href="/about">About</a></li>
-      <li><a href="/contact">Contact</a></li>
     </ul>
   </div>
 </footer>

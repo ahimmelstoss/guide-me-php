@@ -12,7 +12,7 @@
   <?php foreach ($this->topic->getSuggestions() as $suggestion): ?>
   <div class="well clearfix">
     <div id="suggestion-content">
-      <p><a target="_blank" href="<?php echo $suggestion->getUrl()?>"><?php echo $suggestion->getTitle() ?></a><span class="suggestion-name-link"> added by: <a href="/users/<?php echo $suggestion->getUser()->getName() ?>"><?php echo $suggestion->getUser()->getName() ?></a></span></p>
+      <p><a target="_blank" href="<?php echo $suggestion->getUrl()?>"><?php echo $suggestion->getUrl() ?></a><span class="suggestion-name-link"> added by: <a href="/users/<?php echo $suggestion->getUser()->getId() ?>"><?php echo $suggestion->getUser()->getName() ?></a></span></p>
       <p><?php echo $suggestion->getDescription() ?></p>
     </div>
 
@@ -30,6 +30,6 @@
   </div>
   <?php endforeach; ?>
 
-<?php include_once 'views/partials/footer.tpl.php'; ?>
+<?php include_once 'views/suggestions/new.tpl.php' ?>
 
-<!-- TODO: suggestion form if user is signed in -->
+<?php include_once 'views/partials/footer.tpl.php'; ?>

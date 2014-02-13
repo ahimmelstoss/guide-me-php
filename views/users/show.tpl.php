@@ -24,7 +24,7 @@
   <h3><?php echo $this->user->getName()?>'s Suggestions</h3>
   <?php foreach ($this->user->getSuggestions() as $suggestion): ?>
     <div class="well">
-      <p><a target="_blank" href="<?php echo $suggestion->getUrl() ?>"><?php echo $suggestion->getTitle() ?></a> </p>
+      <p><a target="_blank" href="<?php echo $suggestion->getUrl() ?>"><?php echo $suggestion->getUrl() ?></a> </p>
       <p>For Post called: <a href="/topics/<?php echo $suggestion->getTopic()->getId() ?>"><?php echo $suggestion->getTopic()->getTitle() ?></a></p>
       <p>Suggestion Upvotes: <?php echo count($suggestion->getUpvotes()) ?></p>
     </div>
