@@ -1,6 +1,8 @@
 <?php
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\EntityManager;
+
 /**
  * @Entity @Table(name="tags")
  **/
@@ -43,5 +45,19 @@ use Doctrine\Common\Collections\ArrayCollection;
 
     public function setTopics($topics) {
       $this->topics = $topics;
+    }
+
+    public static function findOrCreateTag($tagName) {
+      global $entityManager;
+      if ($tag = $entityManager->getRepository('Tag')->findOneBy(array('name' => $tagName))):
+        $entityManager->merge($tag);
+        $entityManager->flush();
+      else:
+        $tag = new Tag();
+        $tag->setName($tagName);
+        $entityManager->persist($tag);
+        $entityManager->flush();
+      endif;
+      return $tag;
     }
   }

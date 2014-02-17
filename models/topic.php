@@ -77,7 +77,12 @@ class Topic {
     return $this->tags;
   }
 
-  public function setTags($tags) {
+  public function setTags($tagsString) {
+    $tagNames = explode(",", $tagsString);
+    $tags = array();
+    foreach ($tagNames as $tagName):
+      array_push($tags, Tag::findOrCreateTag($tagName));
+    endforeach;
     $this->tags = $tags;
   }
 }

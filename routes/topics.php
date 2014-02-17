@@ -17,14 +17,17 @@ $app->get('/topics/new', function() use($app) {
 });
 
 $app->post('/topics/new', function() use($entityManager, $app) {
+
   $newTopicData = $app->request->post();
   $user = $entityManager->find("User", $app->request->session('user_id'));
+
   if (!isset($newTopicData["title"]) && !isset($newTopicData["description"])):
   elseif (isset($newTopicData["title"]) && isset($newTopicData["description"])):
     $topic = new Topic();
     $topic->setTitle($newTopicData["title"]);
     $topic->setDescription($newTopicData["description"]);
     $topic->setUser($user);
+    $topic->setTags($newTopicData["tag_names"]);
     $entityManager->persist($topic);
     $entityManager->flush();
     $app->redirect('/topics');
