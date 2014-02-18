@@ -23,7 +23,11 @@
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav navbar-right">
           <li><a href="/topics">Topics</a></li>
-          <li><a href="/topics/new">New Topic</a></li>
+          <?php if (isset($this->user)): ?>
+            <li><a href="/topics/new">New Topic</a></li>
+          <?php else: ?>
+            <li><a href="/login">New Topic</a></li>
+          <?php endif; ?>
           <?php if (isset($this->user)): ?>
             <li><a href="/users/<?php echo $this->user->getId() ?>"> <?php echo $this->user->getName() ?></a></li>
             <li><a href="/logout">Log Out</a></li>

@@ -41,3 +41,14 @@ $app->get('/topics/:id', function($id) use($entityManager, $app) {
   $tpl->topic = $topic;
   $tpl->display('views/topics/show.tpl.php');
 });
+
+$app->post('/topics_upvote_suggestion', function() use($entityManager, $app) {
+  $suggestionData = $app->request->post();
+  $suggestionId = $suggestionData["suggestion_id"];
+  $userId = $app->request->session('user_id');
+  $suggestion = $entityManager->find("Suggestion", $suggestionId);
+  //create a new upvote via suggestion
+  //persist and flush
+  $newUpvoteCount = count($suggestion->getUpvotes());
+  //render json to change upvote count to newUpvoteCount
+});

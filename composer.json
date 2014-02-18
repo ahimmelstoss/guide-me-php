@@ -3,7 +3,8 @@
       "monolog/monolog": "1.2.*",
       "slim/slim": "2.*",
       "doctrine/orm": "2.4.*",
-      "savant/Savant3": "3.0.1"
+      "savant/Savant3": "3.0.1",
+      "codeception/codeception": "*"
   },
   "autoload": {
       "classmap": ["models/", "lib/"]
